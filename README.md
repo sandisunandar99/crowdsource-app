@@ -1,8 +1,8 @@
 # JDS SURVEY
 
-#### 1. Deploy local
+### 1. Deploy local
 
-1. Start the application :
+a. Start application :
 
     ```sh
     sudo docker-compose up -d
@@ -18,7 +18,7 @@ Port projek yang digunakan :
 
 ___
 
-#### 2. Modifikasi Desain form
+### 2. Modifikasi Desain form
 * pada mode administrator, klik Themes pada layar.
 * maka akan keluar beberapa themes yang sudah terinstall di framework
 * pada tampilan themes, ada beberapa tab diantaranya : Survey Themes, Admin Themes, dan Question Themes
