@@ -4,10 +4,9 @@
 
 a. Start application :
 
+    ```sh
+     sudo docker-compose up -dl
     ```
-    sudo docker-compose up -d
-    ```
-
 Port projek yang digunakan :
 
 | Server     | Port     |
