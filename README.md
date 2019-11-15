@@ -3,10 +3,11 @@
 ### 1. Deploy local
 
 a. Start application :
+```
+    docker-compose up -d
+```
 
-    ```sh
-     sudo docker-compose up -dl
-    ```
+
 Port projek yang digunakan :
 
 | Server     | Port     |
