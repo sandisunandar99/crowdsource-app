@@ -1,7 +1,22 @@
 # JDS SURVEY
 
 #### 1. Deploy local
-N/A
+
+1. Start the application :
+
+    ```sh
+    sudo docker-compose up -d
+    ```
+
+Port projek yang digunakan :
+
+| Server     | Port     |
+|------------|----------|
+| MySQL      | 8989:3306|
+| PHPMyAdmin | 8182:80  |
+| Nginx      | 8181:80  |
+
+___
 
 #### 2. Modifikasi Desain form
 * pada mode administrator, klik Themes pada layar.
@@ -12,96 +27,6 @@ N/A
 * untuk memodifikasi themes bisa klik *themes editor*, atau jika hanya merubah beberapa tampilan saja pilih *themes options*
 
 
-
-# Nginx PHP MySQL [![Build Status](https://travis-ci.org/nanoninja/docker-nginx-php-mysql.svg?branch=master)](https://travis-ci.org/nanoninja/docker-nginx-php-mysql) [![GitHub version](https://badge.fury.io/gh/nanoninja%2Fdocker-nginx-php-mysql.svg)](https://badge.fury.io/gh/nanoninja%2Fdocker-nginx-php-mysql)
-
-Docker running Nginx, PHP-FPM, Composer, MySQL and PHPMyAdmin.
-
-## Overview
-
-1. [Install prerequisites](#install-prerequisites)
-
-    Before installing project make sure the following prerequisites have been met.
-
-2. [Clone the project](#clone-the-project)
-
-    We’ll download the code from its repository on GitHub.
-
-3. [Configure Nginx With SSL Certificates](#configure-nginx-with-ssl-certificates) [`Optional`]
-
-    We'll generate and configure SSL certificate for nginx before running server.
-
-4. [Configure Xdebug](#configure-xdebug) [`Optional`]
-
-    We'll configure Xdebug for IDE (PHPStorm or Netbeans).
-
-5. [Run the application](#run-the-application)
-
-    By this point we’ll have all the project pieces in place.
-
-6. [Use Makefile](#use-makefile) [`Optional`]
-
-    When developing, you can use `Makefile` for doing recurrent operations.
-
-7. [Use Docker Commands](#use-docker-commands)
-
-    When running, you can use docker commands for doing recurrent operations.
-
-___
-
-## Install prerequisites
-
-For now, this project has been mainly created for Unix `(Linux/MacOS)`. Perhaps it could work on Windows.
-
-All requisites should be available for your distribution. The most important are :
-
-* [Git](https://git-scm.com/downloads)
-* [Docker](https://docs.docker.com/engine/installation/)
-* [Docker Compose](https://docs.docker.com/compose/install/)
-
-Check if `docker-compose` is already installed by entering the following command : 
-
-```sh
-which docker-compose
-```
-
-Check Docker Compose compatibility :
-
-* [Compose file version 3 reference](https://docs.docker.com/compose/compose-file/)
-
-The following is optional but makes life more enjoyable :
-
-```sh
-which make
-```
-
-On Ubuntu and Debian these are available in the meta-package build-essential. On other distributions, you may need to install the GNU C++ compiler separately.
-
-```sh
-sudo apt install build-essential
-```
-
-### Images to use
-
-* [Nginx](https://hub.docker.com/_/nginx/)
-* [MySQL](https://hub.docker.com/_/mysql/)
-* [PHP-FPM](https://hub.docker.com/r/nanoninja/php-fpm/)
-* [Composer](https://hub.docker.com/_/composer/)
-* [PHPMyAdmin](https://hub.docker.com/r/phpmyadmin/phpmyadmin/)
-* [Generate Certificate](https://hub.docker.com/r/jacoelho/generate-certificate/)
-
-You should be careful when installing third party web servers such as MySQL or Nginx.
-
-This project use the following ports :
-
-| Server     | Port |
-|------------|------|
-| MySQL      | 8989 |
-| PHPMyAdmin | 8080 |
-| Nginx      | 8000 |
-| Nginx SSL  | 3000 |
-
-___
 
 ## Clone the project
 
