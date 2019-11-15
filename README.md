@@ -7,14 +7,22 @@ a. Start application :
     docker-compose up -d
 ```
 
+b. upload backup database ke mysql menggunakan phpmyadmin
 
-Port projek yang digunakan :
+   * folder backup database ada di directory
+        ```
+        /etc/sql_backup
+        ```
+   * Import file .sql ke database jds_survey yang sudah dibuat sebelumnya dengan phpmyadmin
 
-| Server     | Port     |
-|------------|----------|
-| MySQL      | 8989:3306|
-| PHPMyAdmin | 8182:80  |
-| Nginx      | 8181:80  |
+
+   * Port projek yang digunakan :
+
+        | Server     | Port     |
+        |------------|----------|
+        | MySQL      | 8989:3306|
+        | PHPMyAdmin | 8182:80  |
+        | Nginx      | 8181:80  |
 
 ___
 
