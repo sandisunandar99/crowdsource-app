@@ -4,7 +4,7 @@
 
 a. Start application :
 
-    ```sh
+    ```
     sudo docker-compose up -d
     ```
 
