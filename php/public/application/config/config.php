@@ -24,10 +24,10 @@
 return array(
 	'components' => array(
 		'db' => array(
-			'connectionString' => 'mysql:host=mysqldb;port=3306;dbname=jds_survey;',
+			'connectionString' => 'mysql:host='.getenv('MYSQL_HOST').';port='.getenv('MYSQL_PORT').';dbname='.getenv('MYSQL_DATABASE').';',
 			'emulatePrepare' => true,
-			'username' => 'dev',
-			'password' => 'dev',
+			'username' => getenv('MYSQL_USER'),
+			'password' => getenv('MYSQL_PASSWORD'),
 			'charset' => 'utf8mb4',
 			'tablePrefix' => 'jds_',
 		),
@@ -58,8 +58,8 @@ return array(
 	// then please check your error-logs - either in your hosting provider admin panel or in some /logs directory
 	// on your webspace.
 	// LimeSurvey developers: Set this to 2 to additionally display STRICT PHP error messages and get full access to standard templates
-		'debug'=>2,
-		'debugsql'=>0, // Set this to 1 to enanble sql logging, only active when debug = 2
+		'debug' => getenv('LS_DEBUG'),
+		'debugsql' => getenv('LS_DEBUG_SQL'), // Set this to 1 to enanble sql logging, only active when debug = 2
 		// Update default LimeSurvey config here
 		'updatable' => false,
 	)
