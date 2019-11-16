@@ -1,35 +1,40 @@
-# JDS SURVEY
+# Crowdsource Survey App
 
-### 1. Deploy local
+## Run the Application
 
-a. Start application :
+Create `.env` file
+
+```sh
+cp .env-sample .env
 ```
-    docker-compose up -d
+
+If you are working in local development, you can uncomment these lines from `docker-compose.yml` file to mount local filesystem to container's
+
+```yaml
+...
+  vol_php_public:
+    ...
+    # driver: local
+    # driver_opts:
+    #   type: none
+    #   device: $PWD/php/public
+    #   o: bind
+...
 ```
 
-b. upload backup database ke mysql menggunakan phpmyadmin
+Then, build images and run containers
 
-   * folder backup database ada di directory
-        ```
-        /etc/sql_backup
-        ```
-   * Import file .sql ke database jds_survey yang sudah dibuat sebelumnya dengan phpmyadmin
+```sh
+docker-compose up -d
+```
 
+Finally, you can access from your browser at http://localhost:8181
 
-   * Port projek yang digunakan :
+## Modifikasi Desain form
 
-        | Server     | Port     |
-        |------------|----------|
-        | MySQL      | 8989:3306|
-        | PHPMyAdmin | 8182:80  |
-        | Nginx      | 8181:80  |
-
-___
-
-### 2. Modifikasi Desain form
 * pada mode administrator, klik Themes pada layar.
 * maka akan keluar beberapa themes yang sudah terinstall di framework
 * pada tampilan themes, ada beberapa tab diantaranya : Survey Themes, Admin Themes, dan Question Themes
-  **Survey Themes** : untuk tampilan survey yang akan dilihat oleh client <br>
-  **Admin Survey** : untuk tampilan admin
+  * **Survey Themes** : untuk tampilan survey yang akan dilihat oleh client
+  * **Admin Survey** : untuk tampilan admin
 * untuk memodifikasi themes bisa klik *themes editor*, atau jika hanya merubah beberapa tampilan saja pilih *themes options*
