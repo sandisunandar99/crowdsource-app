@@ -9,6 +9,7 @@ web/app/vendor/
 web/app/doc/
 web/app/report/
 data/
+.env
 
 # PHPStorm
 .idea/**/workspace.xml
@@ -23,3 +24,4 @@ nbproject/
 
 # SSL Certs
 etc/ssl/
+.vscode/settings.json
