@@ -1,34 +1,41 @@
 version: "3"
 services:
-    web:
-        build:
-            context: ./nginx
-        image: asatrya/limesurvey-nginx
-        ports:
-            - "8181:80"
-        restart: always
-        depends_on:
-            - php
-            - mysqldb
+  web:
+    build:
+      context: ./nginx
+    image: asatrya/limesurvey-nginx
+    ports:
+      - "8181:80"
+    restart: always
+    depends_on:
+      - php
+      - mysqldb
+    volumes:
+      - public:/var/www/html/
 
-    php:
-        build:
-            context: ./php
-        image: asatrya/limesurvey-php
-        restart: always
+  php:
+    build:
+      context: ./php
+    image: asatrya/limesurvey-php
+    restart: always
+    volumes:
+      - public:/var/www/html/public/
 
-    mysqldb:
-        image: mysql:${MYSQL_VERSION}
-        container_name: ${MYSQL_HOST}
-        restart: always
-        env_file:
-            - ".env"
-        environment:
-            - MYSQL_DATABASE=${MYSQL_DATABASE}
-            - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-            - MYSQL_USER=${MYSQL_USER}
-            - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-        ports:
-            - "8989:3306"
-        volumes:
-            - "./data/db/mysql:/var/lib/mysql"
+  mysqldb:
+    image: mysql:${MYSQL_VERSION}
+    container_name: ${MYSQL_HOST}
+    restart: always
+    env_file:
+      - ".env"
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    ports:
+      - "8989:3306"
+    volumes:
+      - "./data/db/mysql:/var/lib/mysql"
+
+volumes: 
+  public:
