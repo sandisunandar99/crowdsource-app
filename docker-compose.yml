@@ -22,20 +22,17 @@ services:
       - public:/var/www/html/public/
 
   mysqldb:
-    image: mysql:${MYSQL_VERSION}
-    container_name: ${MYSQL_HOST}
+    build: 
+      context: ./mysql
+    image: asatrya/limesurvey-mysql
     restart: always
     env_file:
-      - ".env"
-    environment:
-      - MYSQL_DATABASE=${MYSQL_DATABASE}
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-      - MYSQL_USER=${MYSQL_USER}
-      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - .env
     ports:
       - "8989:3306"
     volumes:
-      - "./data/db/mysql:/var/lib/mysql"
+      - vol_mysql_data:/var/lib/mysql
 
 volumes: 
   public:
+  vol_mysql_data:
