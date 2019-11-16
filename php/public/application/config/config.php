@@ -34,11 +34,11 @@ return array(
 		
 		// Uncomment the following lines if you need table-based sessions.
 		// Note: Table-based sessions are currently not supported on MSSQL server.
-		// 'session' => array (
-			// 'class' => 'application.core.web.DbHttpSession',
-			// 'connectionID' => 'db',
-			// 'sessionTableName' => '{{sessions}}',
-		// ),
+		'session' => array (
+			'class' => 'application.core.web.DbHttpSession',
+			'connectionID' => 'db',
+			'sessionTableName' => '{{sessions}}',
+		),
 		
 		'urlManager' => array(
 			'urlFormat' => 'path',
@@ -58,7 +58,7 @@ return array(
 	// then please check your error-logs - either in your hosting provider admin panel or in some /logs directory
 	// on your webspace.
 	// LimeSurvey developers: Set this to 2 to additionally display STRICT PHP error messages and get full access to standard templates
-		'debug'=>0,
+		'debug'=>2,
 		'debugsql'=>0, // Set this to 1 to enanble sql logging, only active when debug = 2
 		// Update default LimeSurvey config here
 		'updatable' => false,
