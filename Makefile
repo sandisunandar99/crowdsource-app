@@ -41,7 +41,19 @@ clean:
 
 code-sniff:
 	@echo "Checking the standard code..."
-	@docker-compose exec -T php ./app/vendor/bin/phpcs -v --standard=PSR2 app/src
+	@php ./php/public/third_party/bin/phpcs --standard=PSR2 ./php/public/application/config \
+		./php/public/application/commands \
+		./php/public/application/controllers \
+		./php/public/application/models \
+		./php/public/application/views
+
+code-fix:
+	@echo "Fixing the standard code..."
+	@php ./php/public/third_party/bin/phpcbf -v --standard=PSR2 ./php/public/application/config \
+		./php/public/application/commands \
+		./php/public/application/controllers \
+		./php/public/application/models \
+		./php/public/application/views
 
 composer-up:
 	@docker run --rm -v $(shell pwd)/web/app:/app composer update
