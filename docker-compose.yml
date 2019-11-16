@@ -11,7 +11,8 @@ services:
       - php
       - mysqldb
     volumes:
-      - public:/var/www/html/
+      - vol_php_public:/var/www/html/
+      - vol_php_tmp:/var/www/html/tmp/
 
   php:
     build:
@@ -21,7 +22,8 @@ services:
     env_file:
       - .env
     volumes:
-      - public:/var/www/html/public/
+      - vol_php_public:/var/www/html/public/
+      - vol_php_tmp:/var/www/html/public/tmp/
 
   mysqldb:
     build: 
@@ -36,5 +38,12 @@ services:
       - vol_mysql_data:/var/lib/mysql
 
 volumes: 
-  public:
+  vol_php_public:
+    # uncomment lines below to mount host volume (suitable for local development)
+    # driver: local
+    # driver_opts:
+    #   type: none
+    #   device: $PWD/php/public
+    #   o: bind
+  vol_php_tmp:
   vol_mysql_data:
