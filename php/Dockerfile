@@ -14,6 +14,7 @@ ADD ./php.ini /usr/local/etc/php/php.ini
 ADD ./public /var/www/html/public
 
 # set file permission
+RUN chmod -R 777 /var/www/html/public/assets
 RUN chmod -R 777 /var/www/html/public/tmp
 RUN chmod -R 777 /var/www/html/public/upload
 RUN chmod -R 777 /var/www/html/public/application/config
